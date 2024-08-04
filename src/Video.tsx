@@ -1,8 +1,7 @@
 import React from "react";
 import videojs from "video.js";
-import "video.js/dist/video-js.min.css";
+import "video.js/dist/video-js.css";
 import "videojs-vr";
-import "./plugins";
 
 interface props {
   options: {
@@ -30,7 +29,6 @@ const VideoJS = ({ options, onReady }: props) => {
         options,
         () => {
           player.vr({ projection: "360" });
-          player.vrZoom();
           onReady && onReady(player);
         }
       ));
